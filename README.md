@@ -20,5 +20,5 @@ node index.js or 双击compress.bat文件完成图片压缩
 ```
 在\compress\index.js中替换成自己的tingKey
 tinify.key = "替换成自己的tingKey";
-···
+```
 [获取tingKey](https://tinypng.com/developers)
