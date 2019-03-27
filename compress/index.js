@@ -1,7 +1,10 @@
 /**
  * author: lints
  * date: 2018-07-09
- * description: 依赖tinyPng压缩的图片工具
+ * description: 基于tinyPng压缩的图片工具
+ * tinypng website: https://tinypng.com/
+ * tinypng免费版一个月只支持500张
+ * 说明:图片压缩完成输出到outputImg文件夹存在延迟
  */
 
 const fs = require("fs"); //引用文件系统模块
@@ -50,7 +53,8 @@ let getFiles = {
 images = getFiles.getImageFiles(inputImgUrl); // 获取文件夹下的所有图片
 // getFiles.getFileList("./public/"); //获取文件夹下的所有文件
 for (const key in images) {
-    //压缩图片文件
-    console.log('Compressed picture Success！', images[key]);
+    //压缩图片文件,并写入outputImg文件
+    console.log(`${'\033[37m'} 图片压缩已压缩 ${Number(key)+1}/${images.length}`)
     tinify.fromFile(`${inputImgUrl}${images[key]}`).toFile(`${outputImgUrl}${images[key]}`);
+    if (Number(key) >= images.length - 1) return console.log(`${'\033[32m'} 图片已压缩完成等待图片输出到${'\033[31m'}outputImg${'\033[32m'}文件中...`);
 }
