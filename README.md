@@ -16,9 +16,9 @@ npm install or yarn
 ```
 node index.js or 双击compress.bat文件完成图片压缩
 ```
-#### tingKey替换
+#### tinyKey替换
 ```
-在\compress\index.js中替换成自己的tingKey
-tinify.key = "替换成自己的tingKey";
-···
-[获取tingKey](https://tinypng.com/developers)
+在\compress\index.js中替换成自己的tinyKey
+tinify.key = "替换成自己的tinyKey";
+```
+[获取tinyKey](https://tinypng.com/developers)
